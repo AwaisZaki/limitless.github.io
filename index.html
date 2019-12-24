@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LIMITLESS LAB</title>
+    <link rel="icon" href="./favicon/16.png" type="image/gif" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <style>
+    html, body {
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    
+  }
+
+  .cover{
+    width: 100%;
+    height: 800px;
+    background-image: url(./images/backimg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #333;
+    position: relative;
+  }
+  .container{
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+
+  }
+.countd{
+  display: inline-block;
+}
+span{
+  font-size: 4.5rem;
+  padding: 0;
+}
+.timer{
+  padding: 2em;
+}
+.d, .h, .m, .s{
+  font-size: 1.5em;
+}
+  </style>
+  </head>
+  <body>
+     <!-- <img src ="bgcomming.jpg" class="bodyclass"/> -->
+<div class="cover">
+
+  
+  <div class="container">      
+    
+        <div class="count">
+          <div class="countd">
+            <div class="timer">
+            <span id="days">00</span>
+           <div class="d"> DAYS</div>
+
+          </div>
+            
+          </div>
+
+          <div class="countd">
+            <div class="timer">
+            <span id="hours">00</span>
+            <div class="h">HOURS</div>
+            </div>
+            
+          </div>
+
+          <div class="countd">
+            <div class="timer">
+            <span id="minutes">00</span>
+            <div class="m">MINUTES</div>
+            </div>
+
+          
+          </div>
+
+          <div class="countd">
+            <div class="timer">
+            <span id="seconds">00</span>
+            <div class="s">SECONDS</div>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+    
+    </div>
+
+
+<script type="text/javascript">
+
+  var count = new Date("Apr 04,2020 00:01:00").getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var d = count - now;
+
+    var days = Math.floor(d/(1000*60*60*24));
+    var hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+    var minutes = Math.floor((d%(1000*60*60))/(1000*60));
+    var seconds = Math.floor((d%(1000*60))/1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    if(d <= 0){
+      clearInterval(x);
+    }
+  },1000);
+</script>
+  </body>
+</html>
